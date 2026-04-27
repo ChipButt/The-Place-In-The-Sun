@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, viewport-fit=cover"
+  />
+  <meta name="theme-color" content="#0f172a" />
+  <meta name="mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-title" content="Nassau" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+  <title>Royal Britannia: Nassau Prototype</title>
+  <link rel="manifest" href="manifest.webmanifest" />
+  <link rel="stylesheet" href="css/main.css" />
+</head>
+<body>
+  <main id="gameShell">
+    <canvas id="gameCanvas" aria-label="Royal Britannia Nassau prototype game canvas"></canvas>
+
+    <section id="hud" aria-label="Game information">
+      <div id="hudText">
+        <strong id="locationName">Loading Nassau...</strong>
+        <span id="hintText">Mobile: D-pad to move · tap objects/NPCs · Desktop: arrows/WASD + E</span>
+      </div>
+      <button id="fullscreenButton" type="button">Full Screen</button>
+      <button id="helpButton" type="button">Help</button>
+    </section>
+
+    <section id="dialogueBox" class="hidden" aria-live="polite">
+      <p id="dialogueText"></p>
+      <button id="dialogueClose" type="button">Continue</button>
+    </section>
+
+    <section id="mobilePanel" aria-label="Mobile controls">
+      <div id="mobilePanelTop">
+        <strong>Royal Britannia</strong>
+        <span>Nassau Prototype</span>
+        <span>Tap the game world to interact.</span>
+      </div>
+
+      <div id="mobileActions">
+        <button id="mobileFullscreenButton" type="button">Full Screen</button>
+        <button id="interactButton" type="button">Action</button>
+      </div>
+
+      <div class="dpad" aria-label="Directional pad">
+        <span></span>
+        <button data-dir="up" type="button" aria-label="Move up">▲</button>
+        <span></span>
+        <button data-dir="left" type="button" aria-label="Move left">◀</button>
+        <button data-dir="down" type="button" aria-label="Move down">▼</button>
+        <button data-dir="right" type="button" aria-label="Move right">▶</button>
+      </div>
+    </section>
+
+    <section id="rotateNotice" aria-live="polite">
+      <div>
+        <strong>Turn your phone sideways</strong>
+        <p>This prototype is built mobile-first in landscape so the D-pad can sit on the right without covering the island.</p>
+      </div>
+    </section>
+  </main>
+
+  <script type="module" src="js/main.js"></script>
+</body>
+</html>
