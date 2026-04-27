@@ -1,0 +1,104 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, viewport-fit=cover"
+  />
+  <meta name="theme-color" content="#0f172a" />
+  <meta name="mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-title" content="Nassau" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+  <title>Royal Britannia: Nassau Prototype</title>
+  <link rel="manifest" href="manifest.webmanifest" />
+  <link rel="stylesheet" href="css/main.css" />
+</head>
+<body>
+  <main id="gameShell">
+    <canvas id="gameCanvas" aria-label="Royal Britannia Nassau prototype game canvas"></canvas>
+
+    <section id="hud" aria-label="Game information">
+      <div id="hudText">
+        <strong id="locationName">Loading Nassau...</strong>
+        <span id="hintText">Move one tile at a time · tap people/objects · walk into entrances</span>
+      </div>
+      <button id="fullscreenButton" type="button">Full Screen</button>
+      <button id="helpButton" type="button">Help</button>
+    </section>
+
+    <section id="statusHud" aria-label="Player status">
+      <div class="statusPill"><span>HP</span><strong id="hpText">20/20</strong></div>
+      <div class="statusPill"><span>GP</span><strong id="gpText">0 GP</strong></div>
+      <button id="inventoryButton" type="button">Bag</button>
+    </section>
+
+    <section id="dialogueBox" class="hidden" aria-live="polite">
+      <p id="dialogueText"></p>
+      <button id="dialogueClose" type="button">Continue</button>
+    </section>
+
+    <section id="lootOverlay" class="gameOverlay hidden" aria-label="Chest contents">
+      <div class="overlayCard">
+        <header class="overlayHeader">
+          <h2 id="lootTitle">Chest</h2>
+          <button id="lootClose" type="button">Close</button>
+        </header>
+        <div id="lootSlots" class="lootSlots"></div>
+        <p id="lootMessage" class="overlayMessage">Tap an item to take it, or use Take All.</p>
+        <footer class="overlayFooter">
+          <button id="lootTakeAll" type="button">Take All</button>
+        </footer>
+      </div>
+    </section>
+
+    <section id="inventoryOverlay" class="gameOverlay hidden" aria-label="Player inventory">
+      <div class="overlayCard">
+        <header class="overlayHeader">
+          <h2>Inventory</h2>
+          <button id="inventoryClose" type="button">Close</button>
+        </header>
+        <p class="overlayMessage">You have five pocket slots. One slot is your on-hand item.</p>
+        <div id="inventorySlots" class="inventorySlots"></div>
+        <p id="inventoryMessage" class="overlayMessage"></p>
+      </div>
+    </section>
+
+    <section id="mobilePanel" aria-label="Mobile controls">
+      <div id="mobilePanelTop">
+        <strong>Royal Britannia</strong>
+        <span>Nassau Prototype</span>
+        <span>D-pad: one tile per move.</span>
+      </div>
+
+      <div id="mobileActions">
+        <button id="mobileFullscreenButton" type="button">Full Screen</button>
+        <button id="mobileInventoryButton" type="button">Bag</button>
+        <button id="interactButton" type="button">Action</button>
+      </div>
+
+      <div class="dpad" aria-label="Directional pad">
+        <span></span>
+        <button data-dir="up" type="button" aria-label="Move up">▲</button>
+        <span></span>
+        <button data-dir="left" type="button" aria-label="Move left">◀</button>
+        <span class="dpadCenter"></span>
+        <button data-dir="right" type="button" aria-label="Move right">▶</button>
+        <span></span>
+        <button data-dir="down" type="button" aria-label="Move down">▼</button>
+        <span></span>
+      </div>
+    </section>
+
+    <section id="rotateNotice" aria-live="polite">
+      <div>
+        <strong>Turn your phone sideways</strong>
+        <p>This prototype is built mobile-first in landscape so the D-pad can sit on the right without covering the island.</p>
+      </div>
+    </section>
+  </main>
+
+  <script type="module" src="js/main.js"></script>
+</body>
+</html>
