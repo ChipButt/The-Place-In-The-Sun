@@ -1,0 +1,11 @@
+{
+  "name": "Royal Britannia: Nassau Prototype",
+  "short_name": "Nassau",
+  "start_url": "./index.html",
+  "scope": "./",
+  "display": "fullscreen",
+  "orientation": "landscape",
+  "background_color": "#0f172a",
+  "theme_color": "#0f172a",
+  "description": "Mobile-first tilemap prototype for the Royal Britannia Nassau RPG."
+}
